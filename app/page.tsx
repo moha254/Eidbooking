@@ -141,7 +141,7 @@ export default function Home() {
             <div>
               <h3 className="text-lg font-bold mb-4">Contact Us</h3>
               <p className="text-primary-foreground/80">
-                📱 WhatsApp: +254 700 000 000<br />
+                📱 WhatsApp: +254 792 837 410<br />
                 📧 Email: info@shilaabo.com<br />
                 🏢 Nairobi, Kenya
               </p>
