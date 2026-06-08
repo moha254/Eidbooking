@@ -2,6 +2,7 @@
 
 import { Car } from '@/types/car';
 import { Button } from '@/components/ui/button';
+import { formatCurrency } from '@/lib/utils';
 
 interface CarCardProps {
   car: Car;
@@ -35,7 +36,7 @@ export function CarCard({ car, onBookNow }: CarCardProps) {
         <div className="border-t border-b border-border py-4 mb-4">
           <p className="text-sm text-muted-foreground mb-2">Daily Rate</p>
           <p className="text-3xl font-bold text-primary">
-            Ksh {car.dailyRate.toLocaleString()}
+            Ksh {formatCurrency(car.dailyRate)}
           </p>
           <p className="text-xs text-muted-foreground mt-1">per day</p>
         </div>
