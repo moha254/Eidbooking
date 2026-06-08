@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Car } from '@/types/car';
 import { Button } from '@/components/ui/button';
+import { formatCurrency } from '@/lib/utils';
 
 interface BookingFormProps {
   selectedCar: Car | null;
@@ -162,7 +163,7 @@ Number of Days: ${formData.numberOfDays}
 Return Date: ${returnDate}
 Pickup Location: ${formData.pickupLocation}
 
-Total Amount: Ksh ${total.toLocaleString()}
+Total Amount: Ksh ${formatCurrency(total)}
 
 Kindly confirm availability. Thank you.`;
 
@@ -259,7 +260,7 @@ Kindly confirm availability. Thank you.`;
           <option value="">Choose a car...</option>
           {cars.map((car) => (
             <option key={car.id} value={car.name}>
-              {car.name} - Ksh {car.dailyRate.toLocaleString()}/day
+              {car.name} - Ksh {formatCurrency(car.dailyRate)}/day
             </option>
           ))}
         </select>
@@ -339,7 +340,7 @@ Kindly confirm availability. Thank you.`;
         <div className="bg-secondary/10 border border-secondary rounded-lg p-4">
           <p className="text-sm text-muted-foreground mb-1">Total Amount</p>
           <p className="text-3xl font-bold text-primary">
-            Ksh {calculateTotal().toLocaleString()}
+            Ksh {formatCurrency(calculateTotal())}
           </p>
           <p className="text-xs text-muted-foreground mt-2">
             {formData.selectedCar} × {formData.numberOfDays} days
